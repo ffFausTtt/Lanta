@@ -64,6 +64,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="WindowReg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WindowAvtor.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -137,6 +141,9 @@
     <Compile Include="Video_card.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="WindowReg.xaml.cs">
+      <DependentUpon>WindowReg.xaml</DependentUpon>
+    </Compile>
     <Compile Include="WindowAvtor.xaml.cs">
       <DependentUpon>WindowAvtor.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -182,6 +189,9 @@
     <Resource Include="img\proc.jpg" />
     <Resource Include="img\ssd.jpg" />
     <Resource Include="img\videocarta.jpg" />
+    <Resource Include="img\Acer.png" />
+    <Resource Include="img\DELL.png" />
+    <Resource Include="img\Lenovo.png" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>

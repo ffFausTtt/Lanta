@@ -8,6 +8,7 @@ namespace LantaSystem
 {
     internal class DataBase
     {
-        public static LantaSystemEntities BaseModel = new LantaSystemEntities();
+        public static LantaSystemEntities BaseModel = new LantaSystemEntities();  
     }
-}
+}  
+      

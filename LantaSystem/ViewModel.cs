@@ -323,7 +323,7 @@ namespace LantaSystem
                 Type_Disk type_Disk = DataBase.BaseModel.Type_Disk.FirstOrDefault(x => x.ID_Type_Disk == disk.ID_Type_Disk);
                 buff.Type = type_Disk.Title_Tipe_Disk;
 
-                disks.Add(buff);
+                disks.Add(buff); 
             }
             return disks;
         }

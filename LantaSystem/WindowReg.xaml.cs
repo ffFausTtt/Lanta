@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,23 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace LantaSystem
 {
     /// <summary>
-    /// Логика взаимодействия для WindowAvtor.xaml
+    /// Логика взаимодействия для WindowReg.xaml
     /// </summary>
-    public partial class WindowAvtor : Window
+    public partial class WindowReg : Window
     {
-        //Product prd = new Product();
-        public User buffer;
-        public WindowAvtor()
+        public WindowReg()
         {
             InitializeComponent();
         }
-
-        
     }
 }
