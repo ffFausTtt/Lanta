@@ -1,0 +1,1778 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Хранилище LantaSystemModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "LantaSystem.dbo.Buying_Goods" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="Buying_Goods">
+          <Key>
+            <PropertyRef Name="ID_User" />
+            <PropertyRef Name="ID_Type_Goods" />
+            <PropertyRef Name="ID_Goods" />
+            <PropertyRef Name="Count" />
+          </Key>
+          <Property Name="ID_User" Type="int" Nullable="false" />
+          <Property Name="ID_Type_Goods" Type="int" Nullable="false" />
+          <Property Name="ID_Goods" Type="int" Nullable="false" />
+          <Property Name="Count" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Compatibility">
+          <Key>
+            <PropertyRef Name="ID_Compatibility" />
+          </Key>
+          <Property Name="ID_Compatibility" Type="int" Nullable="false" />
+          <Property Name="Title_Compatibility" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Corpus">
+          <Key>
+            <PropertyRef Name="ID_Corpus" />
+          </Key>
+          <Property Name="ID_Corpus" Type="int" Nullable="false" />
+          <Property Name="Title_Corpus" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description_Corpus" Type="varchar(max)" Nullable="false" />
+          <Property Name="Price_Corpus" Type="int" Nullable="false" />
+          <Property Name="ID_Compatibility" Type="int" Nullable="false" />
+          <Property Name="ID_Type_Goods" Type="int" Nullable="false" />
+          <Property Name="ID_Firm" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Disk">
+          <Key>
+            <PropertyRef Name="ID_Disk" />
+          </Key>
+          <Property Name="ID_Disk" Type="int" Nullable="false" />
+          <Property Name="Title_Disk" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description_Disk" Type="varchar(max)" Nullable="false" />
+          <Property Name="Price_Disk" Type="int" Nullable="false" />
+          <Property Name="ID_Type_Disk" Type="int" Nullable="false" />
+          <Property Name="ID_Compatibility" Type="int" Nullable="false" />
+          <Property Name="ID_Type_Goods" Type="int" Nullable="false" />
+          <Property Name="ID_Firm" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="ID_User" />
+          </Key>
+          <Property Name="ID_User" Type="int" Nullable="false" />
+          <Property Name="ID_Position" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Firm">
+          <Key>
+            <PropertyRef Name="ID_Firm" />
+          </Key>
+          <Property Name="ID_Firm" Type="int" Nullable="false" />
+          <Property Name="Title_Firm" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Motherboard">
+          <Key>
+            <PropertyRef Name="ID_Motherboard" />
+          </Key>
+          <Property Name="ID_Motherboard" Type="int" Nullable="false" />
+          <Property Name="Title_Motherboard" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description_Motherboard" Type="varchar(max)" Nullable="false" />
+          <Property Name="Price_Motherboard" Type="int" Nullable="false" />
+          <Property Name="ID_Compatibility" Type="int" Nullable="false" />
+          <Property Name="ID_Type_Goods" Type="int" Nullable="false" />
+          <Property Name="ID_Firm" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Ошибки, обнаруженные при создании:
+предупреждение 6002: В таблице или представлении "LantaSystem.dbo.Payment" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="ID_Payment" />
+            <PropertyRef Name="Card_number" />
+            <PropertyRef Name="Card_code" />
+            <PropertyRef Name="ID_User" />
+          </Key>
+          <Property Name="ID_Payment" Type="int" Nullable="false" />
+          <Property Name="Card_number" Type="int" Nullable="false" />
+          <Property Name="Card_code" Type="int" Nullable="false" />
+          <Property Name="ID_User" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="ID_Position" />
+          </Key>
+          <Property Name="ID_Position" Type="int" Nullable="false" />
+          <Property Name="Title_Position" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Power_unit">
+          <Key>
+            <PropertyRef Name="ID_Power_unit" />
+          </Key>
+          <Property Name="ID_Power_unit" Type="int" Nullable="false" />
+          <Property Name="Title_Power_unit" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description_Power_unit" Type="varchar(max)" Nullable="false" />
+          <Property Name="Price_Power_unit" Type="int" Nullable="false" />
+          <Property Name="ID_Compatibility" Type="int" Nullable="false" />
+          <Property Name="ID_Type_Goods" Type="int" Nullable="false" />
+          <Property Name="ID_Firm" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Processor">
+          <Key>
+            <PropertyRef Name="ID_Processor" />
+          </Key>
+          <Property Name="ID_Processor" Type="int" Nullable="false" />
+          <Property Name="Title_Processor" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description_Processor" Type="varchar(max)" Nullable="false" />
+          <Property Name="Price_Processor" Type="int" Nullable="false" />
+          <Property Name="ID_Compatibility" Type="int" Nullable="false" />
+          <Property Name="ID_Type_Goods" Type="int" Nullable="false" />
+          <Property Name="ID_Firm" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="RAM">
+          <Key>
+            <PropertyRef Name="ID_RAM" />
+          </Key>
+          <Property Name="ID_RAM" Type="int" Nullable="false" />
+          <Property Name="Title_RAM" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description_RAM" Type="varchar(max)" Nullable="false" />
+          <Property Name="Price_RAM" Type="int" Nullable="false" />
+          <Property Name="ID_Compatibility" Type="int" Nullable="false" />
+          <Property Name="ID_Type_Goods" Type="int" Nullable="false" />
+          <Property Name="ID_Firm" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="ID_Role" />
+          </Key>
+          <Property Name="ID_Role" Type="int" Nullable="false" />
+          <Property Name="Title_Role" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Type_Disk">
+          <Key>
+            <PropertyRef Name="ID_Type_Disk" />
+          </Key>
+          <Property Name="ID_Type_Disk" Type="int" Nullable="false" />
+          <Property Name="Title_Tipe_Disk" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Type_Goods">
+          <Key>
+            <PropertyRef Name="ID_Type_Goods" />
+          </Key>
+          <Property Name="ID_Type_Goods" Type="int" Nullable="false" />
+          <Property Name="Title_Type_Goods" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID_User" />
+          </Key>
+          <Property Name="ID_User" Type="int" Nullable="false" />
+          <Property Name="Surname_User" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Name_User" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Login_User" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password_User" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone_User" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address_User" Type="varchar(max)" Nullable="false" />
+          <Property Name="ID_Role" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Video_card">
+          <Key>
+            <PropertyRef Name="ID_Video_card" />
+          </Key>
+          <Property Name="ID_Video_card" Type="int" Nullable="false" />
+          <Property Name="Title_Video_card" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description_Video_card" Type="varchar(max)" Nullable="false" />
+          <Property Name="Price_Video_card" Type="int" Nullable="false" />
+          <Property Name="ID_Compatibility" Type="int" Nullable="false" />
+          <Property Name="ID_Type_Goods" Type="int" Nullable="false" />
+          <Property Name="ID_Firm" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Buying_Goods_Corpus">
+          <End Role="Corpus" Type="Self.Corpus" Multiplicity="1" />
+          <End Role="Buying_Goods" Type="Self.Buying_Goods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Corpus">
+              <PropertyRef Name="ID_Corpus" />
+            </Principal>
+            <Dependent Role="Buying_Goods">
+              <PropertyRef Name="ID_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Buying_Goods_Disk">
+          <End Role="Disk" Type="Self.Disk" Multiplicity="1" />
+          <End Role="Buying_Goods" Type="Self.Buying_Goods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Disk">
+              <PropertyRef Name="ID_Disk" />
+            </Principal>
+            <Dependent Role="Buying_Goods">
+              <PropertyRef Name="ID_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Buying_Goods_Motherboard">
+          <End Role="Motherboard" Type="Self.Motherboard" Multiplicity="1" />
+          <End Role="Buying_Goods" Type="Self.Buying_Goods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Motherboard">
+              <PropertyRef Name="ID_Motherboard" />
+            </Principal>
+            <Dependent Role="Buying_Goods">
+              <PropertyRef Name="ID_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Buying_Goods_Power_unit">
+          <End Role="Power_unit" Type="Self.Power_unit" Multiplicity="1" />
+          <End Role="Buying_Goods" Type="Self.Buying_Goods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Power_unit">
+              <PropertyRef Name="ID_Power_unit" />
+            </Principal>
+            <Dependent Role="Buying_Goods">
+              <PropertyRef Name="ID_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Buying_Goods_Processor">
+          <End Role="Processor" Type="Self.Processor" Multiplicity="1" />
+          <End Role="Buying_Goods" Type="Self.Buying_Goods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Processor">
+              <PropertyRef Name="ID_Processor" />
+            </Principal>
+            <Dependent Role="Buying_Goods">
+              <PropertyRef Name="ID_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Buying_Goods_RAM">
+          <End Role="RAM" Type="Self.RAM" Multiplicity="1" />
+          <End Role="Buying_Goods" Type="Self.Buying_Goods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RAM">
+              <PropertyRef Name="ID_RAM" />
+            </Principal>
+            <Dependent Role="Buying_Goods">
+              <PropertyRef Name="ID_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Buying_Goods_Type_Goods">
+          <End Role="Type_Goods" Type="Self.Type_Goods" Multiplicity="1" />
+          <End Role="Buying_Goods" Type="Self.Buying_Goods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_Goods">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Principal>
+            <Dependent Role="Buying_Goods">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Buying_Goods_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Buying_Goods" Type="Self.Buying_Goods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID_User" />
+            </Principal>
+            <Dependent Role="Buying_Goods">
+              <PropertyRef Name="ID_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Buying_Goods_Video_card">
+          <End Role="Video_card" Type="Self.Video_card" Multiplicity="1" />
+          <End Role="Buying_Goods" Type="Self.Buying_Goods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Video_card">
+              <PropertyRef Name="ID_Video_card" />
+            </Principal>
+            <Dependent Role="Buying_Goods">
+              <PropertyRef Name="ID_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Corpus_Compatibility">
+          <End Role="Compatibility" Type="Self.Compatibility" Multiplicity="1" />
+          <End Role="Corpus" Type="Self.Corpus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compatibility">
+              <PropertyRef Name="ID_Compatibility" />
+            </Principal>
+            <Dependent Role="Corpus">
+              <PropertyRef Name="ID_Compatibility" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Corpus_Firm">
+          <End Role="Firm" Type="Self.Firm" Multiplicity="1" />
+          <End Role="Corpus" Type="Self.Corpus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Firm">
+              <PropertyRef Name="ID_Firm" />
+            </Principal>
+            <Dependent Role="Corpus">
+              <PropertyRef Name="ID_Firm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Corpus_Type_Goods">
+          <End Role="Type_Goods" Type="Self.Type_Goods" Multiplicity="1" />
+          <End Role="Corpus" Type="Self.Corpus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_Goods">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Principal>
+            <Dependent Role="Corpus">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Disk_Compatibility">
+          <End Role="Compatibility" Type="Self.Compatibility" Multiplicity="1" />
+          <End Role="Disk" Type="Self.Disk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compatibility">
+              <PropertyRef Name="ID_Compatibility" />
+            </Principal>
+            <Dependent Role="Disk">
+              <PropertyRef Name="ID_Compatibility" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Disk_Firm">
+          <End Role="Firm" Type="Self.Firm" Multiplicity="1" />
+          <End Role="Disk" Type="Self.Disk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Firm">
+              <PropertyRef Name="ID_Firm" />
+            </Principal>
+            <Dependent Role="Disk">
+              <PropertyRef Name="ID_Firm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Disk_Type_Disk">
+          <End Role="Type_Disk" Type="Self.Type_Disk" Multiplicity="1" />
+          <End Role="Disk" Type="Self.Disk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_Disk">
+              <PropertyRef Name="ID_Type_Disk" />
+            </Principal>
+            <Dependent Role="Disk">
+              <PropertyRef Name="ID_Type_Disk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Disk_Type_Goods">
+          <End Role="Type_Goods" Type="Self.Type_Goods" Multiplicity="1" />
+          <End Role="Disk" Type="Self.Disk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_Goods">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Principal>
+            <Dependent Role="Disk">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_Position">
+          <End Role="Position" Type="Self.Position" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Position">
+              <PropertyRef Name="ID_Position" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="ID_Position" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID_User" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="ID_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Motherboard_Compatibility">
+          <End Role="Compatibility" Type="Self.Compatibility" Multiplicity="1" />
+          <End Role="Motherboard" Type="Self.Motherboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compatibility">
+              <PropertyRef Name="ID_Compatibility" />
+            </Principal>
+            <Dependent Role="Motherboard">
+              <PropertyRef Name="ID_Compatibility" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Motherboard_Firm">
+          <End Role="Firm" Type="Self.Firm" Multiplicity="1" />
+          <End Role="Motherboard" Type="Self.Motherboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Firm">
+              <PropertyRef Name="ID_Firm" />
+            </Principal>
+            <Dependent Role="Motherboard">
+              <PropertyRef Name="ID_Firm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Motherboard_Type_Goods">
+          <End Role="Type_Goods" Type="Self.Type_Goods" Multiplicity="1" />
+          <End Role="Motherboard" Type="Self.Motherboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_Goods">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Principal>
+            <Dependent Role="Motherboard">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payment_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID_User" />
+            </Principal>
+            <Dependent Role="Payment">
+              <PropertyRef Name="ID_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Power_unit_Compatibility">
+          <End Role="Compatibility" Type="Self.Compatibility" Multiplicity="1" />
+          <End Role="Power_unit" Type="Self.Power_unit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compatibility">
+              <PropertyRef Name="ID_Compatibility" />
+            </Principal>
+            <Dependent Role="Power_unit">
+              <PropertyRef Name="ID_Compatibility" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Power_unit_Firm">
+          <End Role="Firm" Type="Self.Firm" Multiplicity="1" />
+          <End Role="Power_unit" Type="Self.Power_unit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Firm">
+              <PropertyRef Name="ID_Firm" />
+            </Principal>
+            <Dependent Role="Power_unit">
+              <PropertyRef Name="ID_Firm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Power_unit_Type_Goods">
+          <End Role="Type_Goods" Type="Self.Type_Goods" Multiplicity="1" />
+          <End Role="Power_unit" Type="Self.Power_unit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_Goods">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Principal>
+            <Dependent Role="Power_unit">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Processor_Compatibility">
+          <End Role="Compatibility" Type="Self.Compatibility" Multiplicity="1" />
+          <End Role="Processor" Type="Self.Processor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compatibility">
+              <PropertyRef Name="ID_Compatibility" />
+            </Principal>
+            <Dependent Role="Processor">
+              <PropertyRef Name="ID_Compatibility" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Processor_Firm">
+          <End Role="Firm" Type="Self.Firm" Multiplicity="1" />
+          <End Role="Processor" Type="Self.Processor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Firm">
+              <PropertyRef Name="ID_Firm" />
+            </Principal>
+            <Dependent Role="Processor">
+              <PropertyRef Name="ID_Firm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Processor_Type_Goods">
+          <End Role="Type_Goods" Type="Self.Type_Goods" Multiplicity="1" />
+          <End Role="Processor" Type="Self.Processor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_Goods">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Principal>
+            <Dependent Role="Processor">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAM_Compatibility">
+          <End Role="Compatibility" Type="Self.Compatibility" Multiplicity="1" />
+          <End Role="RAM" Type="Self.RAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compatibility">
+              <PropertyRef Name="ID_Compatibility" />
+            </Principal>
+            <Dependent Role="RAM">
+              <PropertyRef Name="ID_Compatibility" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAM_Firm">
+          <End Role="Firm" Type="Self.Firm" Multiplicity="1" />
+          <End Role="RAM" Type="Self.RAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Firm">
+              <PropertyRef Name="ID_Firm" />
+            </Principal>
+            <Dependent Role="RAM">
+              <PropertyRef Name="ID_Firm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAM_Type_Goods">
+          <End Role="Type_Goods" Type="Self.Type_Goods" Multiplicity="1" />
+          <End Role="RAM" Type="Self.RAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_Goods">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Principal>
+            <Dependent Role="RAM">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="ID_Role" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="ID_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Video_card_Compatibility">
+          <End Role="Compatibility" Type="Self.Compatibility" Multiplicity="1" />
+          <End Role="Video_card" Type="Self.Video_card" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compatibility">
+              <PropertyRef Name="ID_Compatibility" />
+            </Principal>
+            <Dependent Role="Video_card">
+              <PropertyRef Name="ID_Compatibility" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Video_card_Firm">
+          <End Role="Firm" Type="Self.Firm" Multiplicity="1" />
+          <End Role="Video_card" Type="Self.Video_card" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Firm">
+              <PropertyRef Name="ID_Firm" />
+            </Principal>
+            <Dependent Role="Video_card">
+              <PropertyRef Name="ID_Firm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Video_card_Type_Goods">
+          <End Role="Type_Goods" Type="Self.Type_Goods" Multiplicity="1" />
+          <End Role="Video_card" Type="Self.Video_card" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_Goods">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Principal>
+            <Dependent Role="Video_card">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище LantaSystemModelContainer">
+          <EntitySet Name="Compatibility" EntityType="Self.Compatibility" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Corpus" EntityType="Self.Corpus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Disk" EntityType="Self.Disk" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Firm" EntityType="Self.Firm" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Motherboard" EntityType="Self.Motherboard" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Position" EntityType="Self.Position" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Power_unit" EntityType="Self.Power_unit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Processor" EntityType="Self.Processor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="RAM" EntityType="Self.RAM" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Type_Disk" EntityType="Self.Type_Disk" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Type_Goods" EntityType="Self.Type_Goods" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Video_card" EntityType="Self.Video_card" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Buying_Goods" EntityType="Self.Buying_Goods" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Buying_Goods].[ID_User] AS [ID_User], 
+    [Buying_Goods].[ID_Type_Goods] AS [ID_Type_Goods], 
+    [Buying_Goods].[ID_Goods] AS [ID_Goods], 
+    [Buying_Goods].[Count] AS [Count]
+    FROM [dbo].[Buying_Goods] AS [Buying_Goods]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="Payment" EntityType="Self.Payment" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Payment].[ID_Payment] AS [ID_Payment], 
+    [Payment].[Card_number] AS [Card_number], 
+    [Payment].[Card_code] AS [Card_code], 
+    [Payment].[ID_User] AS [ID_User]
+    FROM [dbo].[Payment] AS [Payment]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Buying_Goods_Corpus" Association="Self.FK_Buying_Goods_Corpus">
+            <End Role="Corpus" EntitySet="Corpus" />
+            <End Role="Buying_Goods" EntitySet="Buying_Goods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Buying_Goods_Disk" Association="Self.FK_Buying_Goods_Disk">
+            <End Role="Disk" EntitySet="Disk" />
+            <End Role="Buying_Goods" EntitySet="Buying_Goods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Buying_Goods_Motherboard" Association="Self.FK_Buying_Goods_Motherboard">
+            <End Role="Motherboard" EntitySet="Motherboard" />
+            <End Role="Buying_Goods" EntitySet="Buying_Goods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Buying_Goods_Power_unit" Association="Self.FK_Buying_Goods_Power_unit">
+            <End Role="Power_unit" EntitySet="Power_unit" />
+            <End Role="Buying_Goods" EntitySet="Buying_Goods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Buying_Goods_Processor" Association="Self.FK_Buying_Goods_Processor">
+            <End Role="Processor" EntitySet="Processor" />
+            <End Role="Buying_Goods" EntitySet="Buying_Goods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Buying_Goods_RAM" Association="Self.FK_Buying_Goods_RAM">
+            <End Role="RAM" EntitySet="RAM" />
+            <End Role="Buying_Goods" EntitySet="Buying_Goods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Buying_Goods_Type_Goods" Association="Self.FK_Buying_Goods_Type_Goods">
+            <End Role="Type_Goods" EntitySet="Type_Goods" />
+            <End Role="Buying_Goods" EntitySet="Buying_Goods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Buying_Goods_User" Association="Self.FK_Buying_Goods_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Buying_Goods" EntitySet="Buying_Goods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Buying_Goods_Video_card" Association="Self.FK_Buying_Goods_Video_card">
+            <End Role="Video_card" EntitySet="Video_card" />
+            <End Role="Buying_Goods" EntitySet="Buying_Goods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Corpus_Compatibility" Association="Self.FK_Corpus_Compatibility">
+            <End Role="Compatibility" EntitySet="Compatibility" />
+            <End Role="Corpus" EntitySet="Corpus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Corpus_Firm" Association="Self.FK_Corpus_Firm">
+            <End Role="Firm" EntitySet="Firm" />
+            <End Role="Corpus" EntitySet="Corpus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Corpus_Type_Goods" Association="Self.FK_Corpus_Type_Goods">
+            <End Role="Type_Goods" EntitySet="Type_Goods" />
+            <End Role="Corpus" EntitySet="Corpus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Disk_Compatibility" Association="Self.FK_Disk_Compatibility">
+            <End Role="Compatibility" EntitySet="Compatibility" />
+            <End Role="Disk" EntitySet="Disk" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Disk_Firm" Association="Self.FK_Disk_Firm">
+            <End Role="Firm" EntitySet="Firm" />
+            <End Role="Disk" EntitySet="Disk" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Disk_Type_Disk" Association="Self.FK_Disk_Type_Disk">
+            <End Role="Type_Disk" EntitySet="Type_Disk" />
+            <End Role="Disk" EntitySet="Disk" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Disk_Type_Goods" Association="Self.FK_Disk_Type_Goods">
+            <End Role="Type_Goods" EntitySet="Type_Goods" />
+            <End Role="Disk" EntitySet="Disk" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_Position" Association="Self.FK_Employees_Position">
+            <End Role="Position" EntitySet="Position" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_User" Association="Self.FK_Employees_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Motherboard_Compatibility" Association="Self.FK_Motherboard_Compatibility">
+            <End Role="Compatibility" EntitySet="Compatibility" />
+            <End Role="Motherboard" EntitySet="Motherboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Motherboard_Firm" Association="Self.FK_Motherboard_Firm">
+            <End Role="Firm" EntitySet="Firm" />
+            <End Role="Motherboard" EntitySet="Motherboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Motherboard_Type_Goods" Association="Self.FK_Motherboard_Type_Goods">
+            <End Role="Type_Goods" EntitySet="Type_Goods" />
+            <End Role="Motherboard" EntitySet="Motherboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payment_User" Association="Self.FK_Payment_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Payment" EntitySet="Payment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Power_unit_Compatibility" Association="Self.FK_Power_unit_Compatibility">
+            <End Role="Compatibility" EntitySet="Compatibility" />
+            <End Role="Power_unit" EntitySet="Power_unit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Power_unit_Firm" Association="Self.FK_Power_unit_Firm">
+            <End Role="Firm" EntitySet="Firm" />
+            <End Role="Power_unit" EntitySet="Power_unit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Power_unit_Type_Goods" Association="Self.FK_Power_unit_Type_Goods">
+            <End Role="Type_Goods" EntitySet="Type_Goods" />
+            <End Role="Power_unit" EntitySet="Power_unit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Processor_Compatibility" Association="Self.FK_Processor_Compatibility">
+            <End Role="Compatibility" EntitySet="Compatibility" />
+            <End Role="Processor" EntitySet="Processor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Processor_Firm" Association="Self.FK_Processor_Firm">
+            <End Role="Firm" EntitySet="Firm" />
+            <End Role="Processor" EntitySet="Processor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Processor_Type_Goods" Association="Self.FK_Processor_Type_Goods">
+            <End Role="Type_Goods" EntitySet="Type_Goods" />
+            <End Role="Processor" EntitySet="Processor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAM_Compatibility" Association="Self.FK_RAM_Compatibility">
+            <End Role="Compatibility" EntitySet="Compatibility" />
+            <End Role="RAM" EntitySet="RAM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAM_Firm" Association="Self.FK_RAM_Firm">
+            <End Role="Firm" EntitySet="Firm" />
+            <End Role="RAM" EntitySet="RAM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAM_Type_Goods" Association="Self.FK_RAM_Type_Goods">
+            <End Role="Type_Goods" EntitySet="Type_Goods" />
+            <End Role="RAM" EntitySet="RAM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Video_card_Compatibility" Association="Self.FK_Video_card_Compatibility">
+            <End Role="Compatibility" EntitySet="Compatibility" />
+            <End Role="Video_card" EntitySet="Video_card" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Video_card_Firm" Association="Self.FK_Video_card_Firm">
+            <End Role="Firm" EntitySet="Firm" />
+            <End Role="Video_card" EntitySet="Video_card" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Video_card_Type_Goods" Association="Self.FK_Video_card_Type_Goods">
+            <End Role="Type_Goods" EntitySet="Type_Goods" />
+            <End Role="Video_card" EntitySet="Video_card" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LantaSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Compatibility">
+          <Key>
+            <PropertyRef Name="ID_Compatibility" />
+          </Key>
+          <Property Name="ID_Compatibility" Type="Int32" Nullable="false" />
+          <Property Name="Title_Compatibility" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Corpus" Relationship="Self.FK_Corpus_Compatibility" FromRole="Compatibility" ToRole="Corpus" />
+          <NavigationProperty Name="Disk" Relationship="Self.FK_Disk_Compatibility" FromRole="Compatibility" ToRole="Disk" />
+          <NavigationProperty Name="Motherboard" Relationship="Self.FK_Motherboard_Compatibility" FromRole="Compatibility" ToRole="Motherboard" />
+          <NavigationProperty Name="Power_unit" Relationship="Self.FK_Power_unit_Compatibility" FromRole="Compatibility" ToRole="Power_unit" />
+          <NavigationProperty Name="Processor" Relationship="Self.FK_Processor_Compatibility" FromRole="Compatibility" ToRole="Processor" />
+          <NavigationProperty Name="RAM" Relationship="Self.FK_RAM_Compatibility" FromRole="Compatibility" ToRole="RAM" />
+          <NavigationProperty Name="Video_card" Relationship="Self.FK_Video_card_Compatibility" FromRole="Compatibility" ToRole="Video_card" />
+        </EntityType>
+        <EntityType Name="Corpus">
+          <Key>
+            <PropertyRef Name="ID_Corpus" />
+          </Key>
+          <Property Name="ID_Corpus" Type="Int32" Nullable="false" />
+          <Property Name="Title_Corpus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description_Corpus" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Price_Corpus" Type="Int32" Nullable="false" />
+          <Property Name="ID_Compatibility" Type="Int32" Nullable="false" />
+          <Property Name="ID_Type_Goods" Type="Int32" Nullable="false" />
+          <Property Name="ID_Firm" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Compatibility" Relationship="Self.FK_Corpus_Compatibility" FromRole="Corpus" ToRole="Compatibility" />
+          <NavigationProperty Name="Buying_Goods" Relationship="Self.FK_Buying_Goods_Corpus" FromRole="Corpus" ToRole="Buying_Goods" />
+          <NavigationProperty Name="Firm" Relationship="Self.FK_Corpus_Firm" FromRole="Corpus" ToRole="Firm" />
+          <NavigationProperty Name="Type_Goods" Relationship="Self.FK_Corpus_Type_Goods" FromRole="Corpus" ToRole="Type_Goods" />
+        </EntityType>
+        <EntityType Name="Disk">
+          <Key>
+            <PropertyRef Name="ID_Disk" />
+          </Key>
+          <Property Name="ID_Disk" Type="Int32" Nullable="false" />
+          <Property Name="Title_Disk" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description_Disk" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Price_Disk" Type="Int32" Nullable="false" />
+          <Property Name="ID_Type_Disk" Type="Int32" Nullable="false" />
+          <Property Name="ID_Compatibility" Type="Int32" Nullable="false" />
+          <Property Name="ID_Type_Goods" Type="Int32" Nullable="false" />
+          <Property Name="ID_Firm" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Compatibility" Relationship="Self.FK_Disk_Compatibility" FromRole="Disk" ToRole="Compatibility" />
+          <NavigationProperty Name="Buying_Goods" Relationship="Self.FK_Buying_Goods_Disk" FromRole="Disk" ToRole="Buying_Goods" />
+          <NavigationProperty Name="Firm" Relationship="Self.FK_Disk_Firm" FromRole="Disk" ToRole="Firm" />
+          <NavigationProperty Name="Type_Disk" Relationship="Self.FK_Disk_Type_Disk" FromRole="Disk" ToRole="Type_Disk" />
+          <NavigationProperty Name="Type_Goods" Relationship="Self.FK_Disk_Type_Goods" FromRole="Disk" ToRole="Type_Goods" />
+        </EntityType>
+        <EntityType Name="Firm">
+          <Key>
+            <PropertyRef Name="ID_Firm" />
+          </Key>
+          <Property Name="ID_Firm" Type="Int32" Nullable="false" />
+          <Property Name="Title_Firm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Corpus" Relationship="Self.FK_Corpus_Firm" FromRole="Firm" ToRole="Corpus" />
+          <NavigationProperty Name="Disk" Relationship="Self.FK_Disk_Firm" FromRole="Firm" ToRole="Disk" />
+          <NavigationProperty Name="Motherboard" Relationship="Self.FK_Motherboard_Firm" FromRole="Firm" ToRole="Motherboard" />
+          <NavigationProperty Name="Power_unit" Relationship="Self.FK_Power_unit_Firm" FromRole="Firm" ToRole="Power_unit" />
+          <NavigationProperty Name="Processor" Relationship="Self.FK_Processor_Firm" FromRole="Firm" ToRole="Processor" />
+          <NavigationProperty Name="RAM" Relationship="Self.FK_RAM_Firm" FromRole="Firm" ToRole="RAM" />
+          <NavigationProperty Name="Video_card" Relationship="Self.FK_Video_card_Firm" FromRole="Firm" ToRole="Video_card" />
+        </EntityType>
+        <EntityType Name="Motherboard">
+          <Key>
+            <PropertyRef Name="ID_Motherboard" />
+          </Key>
+          <Property Name="ID_Motherboard" Type="Int32" Nullable="false" />
+          <Property Name="Title_Motherboard" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description_Motherboard" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Price_Motherboard" Type="Int32" Nullable="false" />
+          <Property Name="ID_Compatibility" Type="Int32" Nullable="false" />
+          <Property Name="ID_Type_Goods" Type="Int32" Nullable="false" />
+          <Property Name="ID_Firm" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Compatibility" Relationship="Self.FK_Motherboard_Compatibility" FromRole="Motherboard" ToRole="Compatibility" />
+          <NavigationProperty Name="Firm" Relationship="Self.FK_Motherboard_Firm" FromRole="Motherboard" ToRole="Firm" />
+          <NavigationProperty Name="Buying_Goods" Relationship="Self.FK_Buying_Goods_Motherboard" FromRole="Motherboard" ToRole="Buying_Goods" />
+          <NavigationProperty Name="Type_Goods" Relationship="Self.FK_Motherboard_Type_Goods" FromRole="Motherboard" ToRole="Type_Goods" />
+        </EntityType>
+        <EntityType Name="Position">
+          <Key>
+            <PropertyRef Name="ID_Position" />
+          </Key>
+          <Property Name="ID_Position" Type="Int32" Nullable="false" />
+          <Property Name="Title_Position" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.Employees" FromRole="Position" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Power_unit">
+          <Key>
+            <PropertyRef Name="ID_Power_unit" />
+          </Key>
+          <Property Name="ID_Power_unit" Type="Int32" Nullable="false" />
+          <Property Name="Title_Power_unit" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description_Power_unit" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Price_Power_unit" Type="Int32" Nullable="false" />
+          <Property Name="ID_Compatibility" Type="Int32" Nullable="false" />
+          <Property Name="ID_Type_Goods" Type="Int32" Nullable="false" />
+          <Property Name="ID_Firm" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Compatibility" Relationship="Self.FK_Power_unit_Compatibility" FromRole="Power_unit" ToRole="Compatibility" />
+          <NavigationProperty Name="Firm" Relationship="Self.FK_Power_unit_Firm" FromRole="Power_unit" ToRole="Firm" />
+          <NavigationProperty Name="Buying_Goods" Relationship="Self.FK_Buying_Goods_Power_unit" FromRole="Power_unit" ToRole="Buying_Goods" />
+          <NavigationProperty Name="Type_Goods" Relationship="Self.FK_Power_unit_Type_Goods" FromRole="Power_unit" ToRole="Type_Goods" />
+        </EntityType>
+        <EntityType Name="Processor">
+          <Key>
+            <PropertyRef Name="ID_Processor" />
+          </Key>
+          <Property Name="ID_Processor" Type="Int32" Nullable="false" />
+          <Property Name="Title_Processor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description_Processor" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Price_Processor" Type="Int32" Nullable="false" />
+          <Property Name="ID_Compatibility" Type="Int32" Nullable="false" />
+          <Property Name="ID_Type_Goods" Type="Int32" Nullable="false" />
+          <Property Name="ID_Firm" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Compatibility" Relationship="Self.FK_Processor_Compatibility" FromRole="Processor" ToRole="Compatibility" />
+          <NavigationProperty Name="Firm" Relationship="Self.FK_Processor_Firm" FromRole="Processor" ToRole="Firm" />
+          <NavigationProperty Name="Buying_Goods" Relationship="Self.FK_Buying_Goods_Processor" FromRole="Processor" ToRole="Buying_Goods" />
+          <NavigationProperty Name="Type_Goods" Relationship="Self.FK_Processor_Type_Goods" FromRole="Processor" ToRole="Type_Goods" />
+        </EntityType>
+        <EntityType Name="RAM">
+          <Key>
+            <PropertyRef Name="ID_RAM" />
+          </Key>
+          <Property Name="ID_RAM" Type="Int32" Nullable="false" />
+          <Property Name="Title_RAM" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description_RAM" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Price_RAM" Type="Int32" Nullable="false" />
+          <Property Name="ID_Compatibility" Type="Int32" Nullable="false" />
+          <Property Name="ID_Type_Goods" Type="Int32" Nullable="false" />
+          <Property Name="ID_Firm" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Compatibility" Relationship="Self.FK_RAM_Compatibility" FromRole="RAM" ToRole="Compatibility" />
+          <NavigationProperty Name="Firm" Relationship="Self.FK_RAM_Firm" FromRole="RAM" ToRole="Firm" />
+          <NavigationProperty Name="Buying_Goods" Relationship="Self.FK_Buying_Goods_RAM" FromRole="RAM" ToRole="Buying_Goods" />
+          <NavigationProperty Name="Type_Goods" Relationship="Self.FK_RAM_Type_Goods" FromRole="RAM" ToRole="Type_Goods" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="ID_Role" />
+          </Key>
+          <Property Name="ID_Role" Type="Int32" Nullable="false" />
+          <Property Name="Title_Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_User_Role" FromRole="Role" ToRole="User" />
+        </EntityType>
+        <EntityType Name="Type_Disk">
+          <Key>
+            <PropertyRef Name="ID_Type_Disk" />
+          </Key>
+          <Property Name="ID_Type_Disk" Type="Int32" Nullable="false" />
+          <Property Name="Title_Tipe_Disk" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Disk" Relationship="Self.FK_Disk_Type_Disk" FromRole="Type_Disk" ToRole="Disk" />
+        </EntityType>
+        <EntityType Name="Type_Goods">
+          <Key>
+            <PropertyRef Name="ID_Type_Goods" />
+          </Key>
+          <Property Name="ID_Type_Goods" Type="Int32" Nullable="false" />
+          <Property Name="Title_Type_Goods" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Corpus" Relationship="Self.FK_Corpus_Type_Goods" FromRole="Type_Goods" ToRole="Corpus" />
+          <NavigationProperty Name="Disk" Relationship="Self.FK_Disk_Type_Goods" FromRole="Type_Goods" ToRole="Disk" />
+          <NavigationProperty Name="Motherboard" Relationship="Self.FK_Motherboard_Type_Goods" FromRole="Type_Goods" ToRole="Motherboard" />
+          <NavigationProperty Name="Power_unit" Relationship="Self.FK_Power_unit_Type_Goods" FromRole="Type_Goods" ToRole="Power_unit" />
+          <NavigationProperty Name="Processor" Relationship="Self.FK_Processor_Type_Goods" FromRole="Type_Goods" ToRole="Processor" />
+          <NavigationProperty Name="RAM" Relationship="Self.FK_RAM_Type_Goods" FromRole="Type_Goods" ToRole="RAM" />
+          <NavigationProperty Name="Buying_Goods" Relationship="Self.FK_Buying_Goods_Type_Goods" FromRole="Type_Goods" ToRole="Buying_Goods" />
+          <NavigationProperty Name="Video_card" Relationship="Self.FK_Video_card_Type_Goods" FromRole="Type_Goods" ToRole="Video_card" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID_User" />
+          </Key>
+          <Property Name="ID_User" Type="Int32" Nullable="false" />
+          <Property Name="Surname_User" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Name_User" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Login_User" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password_User" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Phone_User" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address_User" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ID_Role" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Role" Relationship="Self.FK_User_Role" FromRole="User" ToRole="Role" />
+          <NavigationProperty Name="Buying_Goods" Relationship="Self.FK_Buying_Goods_User" FromRole="User" ToRole="Buying_Goods" />
+          <NavigationProperty Name="Payment" Relationship="Self.FK_Payment_User" FromRole="User" ToRole="Payment" />
+          <NavigationProperty Name="Position" Relationship="Self.Employees" FromRole="User" ToRole="Position" />
+        </EntityType>
+        <EntityType Name="Video_card">
+          <Key>
+            <PropertyRef Name="ID_Video_card" />
+          </Key>
+          <Property Name="ID_Video_card" Type="Int32" Nullable="false" />
+          <Property Name="Title_Video_card" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description_Video_card" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Price_Video_card" Type="Int32" Nullable="false" />
+          <Property Name="ID_Compatibility" Type="Int32" Nullable="false" />
+          <Property Name="ID_Type_Goods" Type="Int32" Nullable="false" />
+          <Property Name="ID_Firm" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Compatibility" Relationship="Self.FK_Video_card_Compatibility" FromRole="Video_card" ToRole="Compatibility" />
+          <NavigationProperty Name="Firm" Relationship="Self.FK_Video_card_Firm" FromRole="Video_card" ToRole="Firm" />
+          <NavigationProperty Name="Type_Goods" Relationship="Self.FK_Video_card_Type_Goods" FromRole="Video_card" ToRole="Type_Goods" />
+          <NavigationProperty Name="Buying_Goods" Relationship="Self.FK_Buying_Goods_Video_card" FromRole="Video_card" ToRole="Buying_Goods" />
+        </EntityType>
+        <EntityType Name="Buying_Goods">
+          <Key>
+            <PropertyRef Name="ID_User" />
+            <PropertyRef Name="ID_Type_Goods" />
+            <PropertyRef Name="ID_Goods" />
+            <PropertyRef Name="Count" />
+          </Key>
+          <Property Name="ID_User" Type="Int32" Nullable="false" />
+          <Property Name="ID_Type_Goods" Type="Int32" Nullable="false" />
+          <Property Name="ID_Goods" Type="Int32" Nullable="false" />
+          <Property Name="Count" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Corpus" Relationship="Self.FK_Buying_Goods_Corpus" FromRole="Buying_Goods" ToRole="Corpus" />
+          <NavigationProperty Name="Disk" Relationship="Self.FK_Buying_Goods_Disk" FromRole="Buying_Goods" ToRole="Disk" />
+          <NavigationProperty Name="Motherboard" Relationship="Self.FK_Buying_Goods_Motherboard" FromRole="Buying_Goods" ToRole="Motherboard" />
+          <NavigationProperty Name="Power_unit" Relationship="Self.FK_Buying_Goods_Power_unit" FromRole="Buying_Goods" ToRole="Power_unit" />
+          <NavigationProperty Name="Processor" Relationship="Self.FK_Buying_Goods_Processor" FromRole="Buying_Goods" ToRole="Processor" />
+          <NavigationProperty Name="RAM" Relationship="Self.FK_Buying_Goods_RAM" FromRole="Buying_Goods" ToRole="RAM" />
+          <NavigationProperty Name="Type_Goods" Relationship="Self.FK_Buying_Goods_Type_Goods" FromRole="Buying_Goods" ToRole="Type_Goods" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Buying_Goods_User" FromRole="Buying_Goods" ToRole="User" />
+          <NavigationProperty Name="Video_card" Relationship="Self.FK_Buying_Goods_Video_card" FromRole="Buying_Goods" ToRole="Video_card" />
+        </EntityType>
+        <EntityType Name="Payment">
+          <Key>
+            <PropertyRef Name="ID_Payment" />
+            <PropertyRef Name="Card_number" />
+            <PropertyRef Name="Card_code" />
+            <PropertyRef Name="ID_User" />
+          </Key>
+          <Property Name="ID_Payment" Type="Int32" Nullable="false" />
+          <Property Name="Card_number" Type="Int32" Nullable="false" />
+          <Property Name="Card_code" Type="Int32" Nullable="false" />
+          <Property Name="ID_User" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK_Payment_User" FromRole="Payment" ToRole="User" />
+        </EntityType>
+        <Association Name="FK_Corpus_Compatibility">
+          <End Role="Compatibility" Type="Self.Compatibility" Multiplicity="1" />
+          <End Role="Corpus" Type="Self.Corpus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compatibility">
+              <PropertyRef Name="ID_Compatibility" />
+            </Principal>
+            <Dependent Role="Corpus">
+              <PropertyRef Name="ID_Compatibility" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Disk_Compatibility">
+          <End Role="Compatibility" Type="Self.Compatibility" Multiplicity="1" />
+          <End Role="Disk" Type="Self.Disk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compatibility">
+              <PropertyRef Name="ID_Compatibility" />
+            </Principal>
+            <Dependent Role="Disk">
+              <PropertyRef Name="ID_Compatibility" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Motherboard_Compatibility">
+          <End Role="Compatibility" Type="Self.Compatibility" Multiplicity="1" />
+          <End Role="Motherboard" Type="Self.Motherboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compatibility">
+              <PropertyRef Name="ID_Compatibility" />
+            </Principal>
+            <Dependent Role="Motherboard">
+              <PropertyRef Name="ID_Compatibility" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Power_unit_Compatibility">
+          <End Role="Compatibility" Type="Self.Compatibility" Multiplicity="1" />
+          <End Role="Power_unit" Type="Self.Power_unit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compatibility">
+              <PropertyRef Name="ID_Compatibility" />
+            </Principal>
+            <Dependent Role="Power_unit">
+              <PropertyRef Name="ID_Compatibility" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Processor_Compatibility">
+          <End Role="Compatibility" Type="Self.Compatibility" Multiplicity="1" />
+          <End Role="Processor" Type="Self.Processor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compatibility">
+              <PropertyRef Name="ID_Compatibility" />
+            </Principal>
+            <Dependent Role="Processor">
+              <PropertyRef Name="ID_Compatibility" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAM_Compatibility">
+          <End Role="Compatibility" Type="Self.Compatibility" Multiplicity="1" />
+          <End Role="RAM" Type="Self.RAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compatibility">
+              <PropertyRef Name="ID_Compatibility" />
+            </Principal>
+            <Dependent Role="RAM">
+              <PropertyRef Name="ID_Compatibility" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Video_card_Compatibility">
+          <End Role="Compatibility" Type="Self.Compatibility" Multiplicity="1" />
+          <End Role="Video_card" Type="Self.Video_card" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compatibility">
+              <PropertyRef Name="ID_Compatibility" />
+            </Principal>
+            <Dependent Role="Video_card">
+              <PropertyRef Name="ID_Compatibility" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Buying_Goods_Corpus">
+          <End Role="Corpus" Type="Self.Corpus" Multiplicity="1" />
+          <End Role="Buying_Goods" Type="Self.Buying_Goods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Corpus">
+              <PropertyRef Name="ID_Corpus" />
+            </Principal>
+            <Dependent Role="Buying_Goods">
+              <PropertyRef Name="ID_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Corpus_Firm">
+          <End Role="Firm" Type="Self.Firm" Multiplicity="1" />
+          <End Role="Corpus" Type="Self.Corpus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Firm">
+              <PropertyRef Name="ID_Firm" />
+            </Principal>
+            <Dependent Role="Corpus">
+              <PropertyRef Name="ID_Firm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Corpus_Type_Goods">
+          <End Role="Type_Goods" Type="Self.Type_Goods" Multiplicity="1" />
+          <End Role="Corpus" Type="Self.Corpus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_Goods">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Principal>
+            <Dependent Role="Corpus">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Buying_Goods_Disk">
+          <End Role="Disk" Type="Self.Disk" Multiplicity="1" />
+          <End Role="Buying_Goods" Type="Self.Buying_Goods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Disk">
+              <PropertyRef Name="ID_Disk" />
+            </Principal>
+            <Dependent Role="Buying_Goods">
+              <PropertyRef Name="ID_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Disk_Firm">
+          <End Role="Firm" Type="Self.Firm" Multiplicity="1" />
+          <End Role="Disk" Type="Self.Disk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Firm">
+              <PropertyRef Name="ID_Firm" />
+            </Principal>
+            <Dependent Role="Disk">
+              <PropertyRef Name="ID_Firm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Disk_Type_Disk">
+          <End Role="Type_Disk" Type="Self.Type_Disk" Multiplicity="1" />
+          <End Role="Disk" Type="Self.Disk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_Disk">
+              <PropertyRef Name="ID_Type_Disk" />
+            </Principal>
+            <Dependent Role="Disk">
+              <PropertyRef Name="ID_Type_Disk" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Disk_Type_Goods">
+          <End Role="Type_Goods" Type="Self.Type_Goods" Multiplicity="1" />
+          <End Role="Disk" Type="Self.Disk" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_Goods">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Principal>
+            <Dependent Role="Disk">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Motherboard_Firm">
+          <End Role="Firm" Type="Self.Firm" Multiplicity="1" />
+          <End Role="Motherboard" Type="Self.Motherboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Firm">
+              <PropertyRef Name="ID_Firm" />
+            </Principal>
+            <Dependent Role="Motherboard">
+              <PropertyRef Name="ID_Firm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Power_unit_Firm">
+          <End Role="Firm" Type="Self.Firm" Multiplicity="1" />
+          <End Role="Power_unit" Type="Self.Power_unit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Firm">
+              <PropertyRef Name="ID_Firm" />
+            </Principal>
+            <Dependent Role="Power_unit">
+              <PropertyRef Name="ID_Firm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Processor_Firm">
+          <End Role="Firm" Type="Self.Firm" Multiplicity="1" />
+          <End Role="Processor" Type="Self.Processor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Firm">
+              <PropertyRef Name="ID_Firm" />
+            </Principal>
+            <Dependent Role="Processor">
+              <PropertyRef Name="ID_Firm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAM_Firm">
+          <End Role="Firm" Type="Self.Firm" Multiplicity="1" />
+          <End Role="RAM" Type="Self.RAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Firm">
+              <PropertyRef Name="ID_Firm" />
+            </Principal>
+            <Dependent Role="RAM">
+              <PropertyRef Name="ID_Firm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Video_card_Firm">
+          <End Role="Firm" Type="Self.Firm" Multiplicity="1" />
+          <End Role="Video_card" Type="Self.Video_card" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Firm">
+              <PropertyRef Name="ID_Firm" />
+            </Principal>
+            <Dependent Role="Video_card">
+              <PropertyRef Name="ID_Firm" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Buying_Goods_Motherboard">
+          <End Role="Motherboard" Type="Self.Motherboard" Multiplicity="1" />
+          <End Role="Buying_Goods" Type="Self.Buying_Goods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Motherboard">
+              <PropertyRef Name="ID_Motherboard" />
+            </Principal>
+            <Dependent Role="Buying_Goods">
+              <PropertyRef Name="ID_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Motherboard_Type_Goods">
+          <End Role="Type_Goods" Type="Self.Type_Goods" Multiplicity="1" />
+          <End Role="Motherboard" Type="Self.Motherboard" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_Goods">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Principal>
+            <Dependent Role="Motherboard">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Buying_Goods_Power_unit">
+          <End Role="Power_unit" Type="Self.Power_unit" Multiplicity="1" />
+          <End Role="Buying_Goods" Type="Self.Buying_Goods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Power_unit">
+              <PropertyRef Name="ID_Power_unit" />
+            </Principal>
+            <Dependent Role="Buying_Goods">
+              <PropertyRef Name="ID_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Power_unit_Type_Goods">
+          <End Role="Type_Goods" Type="Self.Type_Goods" Multiplicity="1" />
+          <End Role="Power_unit" Type="Self.Power_unit" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_Goods">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Principal>
+            <Dependent Role="Power_unit">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Buying_Goods_Processor">
+          <End Role="Processor" Type="Self.Processor" Multiplicity="1" />
+          <End Role="Buying_Goods" Type="Self.Buying_Goods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Processor">
+              <PropertyRef Name="ID_Processor" />
+            </Principal>
+            <Dependent Role="Buying_Goods">
+              <PropertyRef Name="ID_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Processor_Type_Goods">
+          <End Role="Type_Goods" Type="Self.Type_Goods" Multiplicity="1" />
+          <End Role="Processor" Type="Self.Processor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_Goods">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Principal>
+            <Dependent Role="Processor">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Buying_Goods_RAM">
+          <End Role="RAM" Type="Self.RAM" Multiplicity="1" />
+          <End Role="Buying_Goods" Type="Self.Buying_Goods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="RAM">
+              <PropertyRef Name="ID_RAM" />
+            </Principal>
+            <Dependent Role="Buying_Goods">
+              <PropertyRef Name="ID_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RAM_Type_Goods">
+          <End Role="Type_Goods" Type="Self.Type_Goods" Multiplicity="1" />
+          <End Role="RAM" Type="Self.RAM" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_Goods">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Principal>
+            <Dependent Role="RAM">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Role">
+          <End Role="Role" Type="Self.Role" Multiplicity="1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Role">
+              <PropertyRef Name="ID_Role" />
+            </Principal>
+            <Dependent Role="User">
+              <PropertyRef Name="ID_Role" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Buying_Goods_Type_Goods">
+          <End Role="Type_Goods" Type="Self.Type_Goods" Multiplicity="1" />
+          <End Role="Buying_Goods" Type="Self.Buying_Goods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_Goods">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Principal>
+            <Dependent Role="Buying_Goods">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Video_card_Type_Goods">
+          <End Role="Type_Goods" Type="Self.Type_Goods" Multiplicity="1" />
+          <End Role="Video_card" Type="Self.Video_card" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Type_Goods">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Principal>
+            <Dependent Role="Video_card">
+              <PropertyRef Name="ID_Type_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Buying_Goods_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Buying_Goods" Type="Self.Buying_Goods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID_User" />
+            </Principal>
+            <Dependent Role="Buying_Goods">
+              <PropertyRef Name="ID_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Payment_User">
+          <End Role="User" Type="Self.User" Multiplicity="1" />
+          <End Role="Payment" Type="Self.Payment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="ID_User" />
+            </Principal>
+            <Dependent Role="Payment">
+              <PropertyRef Name="ID_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Buying_Goods_Video_card">
+          <End Role="Video_card" Type="Self.Video_card" Multiplicity="1" />
+          <End Role="Buying_Goods" Type="Self.Buying_Goods" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Video_card">
+              <PropertyRef Name="ID_Video_card" />
+            </Principal>
+            <Dependent Role="Buying_Goods">
+              <PropertyRef Name="ID_Goods" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Employees">
+          <End Role="Position" Type="Self.Position" Multiplicity="0..1" />
+          <End Role="User" Type="Self.User" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="LantaSystemEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Compatibility" EntityType="Self.Compatibility" />
+          <EntitySet Name="Corpus" EntityType="Self.Corpus" />
+          <EntitySet Name="Disk" EntityType="Self.Disk" />
+          <EntitySet Name="Firm" EntityType="Self.Firm" />
+          <EntitySet Name="Motherboard" EntityType="Self.Motherboard" />
+          <EntitySet Name="Position" EntityType="Self.Position" />
+          <EntitySet Name="Power_unit" EntityType="Self.Power_unit" />
+          <EntitySet Name="Processor" EntityType="Self.Processor" />
+          <EntitySet Name="RAM" EntityType="Self.RAM" />
+          <EntitySet Name="Role" EntityType="Self.Role" />
+          <EntitySet Name="Type_Disk" EntityType="Self.Type_Disk" />
+          <EntitySet Name="Type_Goods" EntityType="Self.Type_Goods" />
+          <EntitySet Name="User" EntityType="Self.User" />
+          <EntitySet Name="Video_card" EntityType="Self.Video_card" />
+          <EntitySet Name="Buying_Goods" EntityType="Self.Buying_Goods" />
+          <EntitySet Name="Payment" EntityType="Self.Payment" />
+          <AssociationSet Name="FK_Corpus_Compatibility" Association="Self.FK_Corpus_Compatibility">
+            <End Role="Compatibility" EntitySet="Compatibility" />
+            <End Role="Corpus" EntitySet="Corpus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Disk_Compatibility" Association="Self.FK_Disk_Compatibility">
+            <End Role="Compatibility" EntitySet="Compatibility" />
+            <End Role="Disk" EntitySet="Disk" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Motherboard_Compatibility" Association="Self.FK_Motherboard_Compatibility">
+            <End Role="Compatibility" EntitySet="Compatibility" />
+            <End Role="Motherboard" EntitySet="Motherboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Power_unit_Compatibility" Association="Self.FK_Power_unit_Compatibility">
+            <End Role="Compatibility" EntitySet="Compatibility" />
+            <End Role="Power_unit" EntitySet="Power_unit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Processor_Compatibility" Association="Self.FK_Processor_Compatibility">
+            <End Role="Compatibility" EntitySet="Compatibility" />
+            <End Role="Processor" EntitySet="Processor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAM_Compatibility" Association="Self.FK_RAM_Compatibility">
+            <End Role="Compatibility" EntitySet="Compatibility" />
+            <End Role="RAM" EntitySet="RAM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Video_card_Compatibility" Association="Self.FK_Video_card_Compatibility">
+            <End Role="Compatibility" EntitySet="Compatibility" />
+            <End Role="Video_card" EntitySet="Video_card" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Buying_Goods_Corpus" Association="Self.FK_Buying_Goods_Corpus">
+            <End Role="Corpus" EntitySet="Corpus" />
+            <End Role="Buying_Goods" EntitySet="Buying_Goods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Corpus_Firm" Association="Self.FK_Corpus_Firm">
+            <End Role="Firm" EntitySet="Firm" />
+            <End Role="Corpus" EntitySet="Corpus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Corpus_Type_Goods" Association="Self.FK_Corpus_Type_Goods">
+            <End Role="Type_Goods" EntitySet="Type_Goods" />
+            <End Role="Corpus" EntitySet="Corpus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Buying_Goods_Disk" Association="Self.FK_Buying_Goods_Disk">
+            <End Role="Disk" EntitySet="Disk" />
+            <End Role="Buying_Goods" EntitySet="Buying_Goods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Disk_Firm" Association="Self.FK_Disk_Firm">
+            <End Role="Firm" EntitySet="Firm" />
+            <End Role="Disk" EntitySet="Disk" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Disk_Type_Disk" Association="Self.FK_Disk_Type_Disk">
+            <End Role="Type_Disk" EntitySet="Type_Disk" />
+            <End Role="Disk" EntitySet="Disk" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Disk_Type_Goods" Association="Self.FK_Disk_Type_Goods">
+            <End Role="Type_Goods" EntitySet="Type_Goods" />
+            <End Role="Disk" EntitySet="Disk" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Motherboard_Firm" Association="Self.FK_Motherboard_Firm">
+            <End Role="Firm" EntitySet="Firm" />
+            <End Role="Motherboard" EntitySet="Motherboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Power_unit_Firm" Association="Self.FK_Power_unit_Firm">
+            <End Role="Firm" EntitySet="Firm" />
+            <End Role="Power_unit" EntitySet="Power_unit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Processor_Firm" Association="Self.FK_Processor_Firm">
+            <End Role="Firm" EntitySet="Firm" />
+            <End Role="Processor" EntitySet="Processor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAM_Firm" Association="Self.FK_RAM_Firm">
+            <End Role="Firm" EntitySet="Firm" />
+            <End Role="RAM" EntitySet="RAM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Video_card_Firm" Association="Self.FK_Video_card_Firm">
+            <End Role="Firm" EntitySet="Firm" />
+            <End Role="Video_card" EntitySet="Video_card" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Buying_Goods_Motherboard" Association="Self.FK_Buying_Goods_Motherboard">
+            <End Role="Motherboard" EntitySet="Motherboard" />
+            <End Role="Buying_Goods" EntitySet="Buying_Goods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Motherboard_Type_Goods" Association="Self.FK_Motherboard_Type_Goods">
+            <End Role="Type_Goods" EntitySet="Type_Goods" />
+            <End Role="Motherboard" EntitySet="Motherboard" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Buying_Goods_Power_unit" Association="Self.FK_Buying_Goods_Power_unit">
+            <End Role="Power_unit" EntitySet="Power_unit" />
+            <End Role="Buying_Goods" EntitySet="Buying_Goods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Power_unit_Type_Goods" Association="Self.FK_Power_unit_Type_Goods">
+            <End Role="Type_Goods" EntitySet="Type_Goods" />
+            <End Role="Power_unit" EntitySet="Power_unit" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Buying_Goods_Processor" Association="Self.FK_Buying_Goods_Processor">
+            <End Role="Processor" EntitySet="Processor" />
+            <End Role="Buying_Goods" EntitySet="Buying_Goods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Processor_Type_Goods" Association="Self.FK_Processor_Type_Goods">
+            <End Role="Type_Goods" EntitySet="Type_Goods" />
+            <End Role="Processor" EntitySet="Processor" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Buying_Goods_RAM" Association="Self.FK_Buying_Goods_RAM">
+            <End Role="RAM" EntitySet="RAM" />
+            <End Role="Buying_Goods" EntitySet="Buying_Goods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RAM_Type_Goods" Association="Self.FK_RAM_Type_Goods">
+            <End Role="Type_Goods" EntitySet="Type_Goods" />
+            <End Role="RAM" EntitySet="RAM" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+            <End Role="Role" EntitySet="Role" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Buying_Goods_Type_Goods" Association="Self.FK_Buying_Goods_Type_Goods">
+            <End Role="Type_Goods" EntitySet="Type_Goods" />
+            <End Role="Buying_Goods" EntitySet="Buying_Goods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Video_card_Type_Goods" Association="Self.FK_Video_card_Type_Goods">
+            <End Role="Type_Goods" EntitySet="Type_Goods" />
+            <End Role="Video_card" EntitySet="Video_card" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Buying_Goods_User" Association="Self.FK_Buying_Goods_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Buying_Goods" EntitySet="Buying_Goods" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Payment_User" Association="Self.FK_Payment_User">
+            <End Role="User" EntitySet="User" />
+            <End Role="Payment" EntitySet="Payment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Buying_Goods_Video_card" Association="Self.FK_Buying_Goods_Video_card">
+            <End Role="Video_card" EntitySet="Video_card" />
+            <End Role="Buying_Goods" EntitySet="Buying_Goods" />
+          </AssociationSet>
+          <AssociationSet Name="Employees" Association="Self.Employees">
+            <End Role="Position" EntitySet="Position" />
+            <End Role="User" EntitySet="User" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище LantaSystemModelContainer" CdmEntityContainer="LantaSystemEntities">
+          <EntitySetMapping Name="Compatibility">
+            <EntityTypeMapping TypeName="LantaSystemModel.Compatibility">
+              <MappingFragment StoreEntitySet="Compatibility">
+                <ScalarProperty Name="ID_Compatibility" ColumnName="ID_Compatibility" />
+                <ScalarProperty Name="Title_Compatibility" ColumnName="Title_Compatibility" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Corpus">
+            <EntityTypeMapping TypeName="LantaSystemModel.Corpus">
+              <MappingFragment StoreEntitySet="Corpus">
+                <ScalarProperty Name="ID_Corpus" ColumnName="ID_Corpus" />
+                <ScalarProperty Name="Title_Corpus" ColumnName="Title_Corpus" />
+                <ScalarProperty Name="Description_Corpus" ColumnName="Description_Corpus" />
+                <ScalarProperty Name="Price_Corpus" ColumnName="Price_Corpus" />
+                <ScalarProperty Name="ID_Compatibility" ColumnName="ID_Compatibility" />
+                <ScalarProperty Name="ID_Type_Goods" ColumnName="ID_Type_Goods" />
+                <ScalarProperty Name="ID_Firm" ColumnName="ID_Firm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Disk">
+            <EntityTypeMapping TypeName="LantaSystemModel.Disk">
+              <MappingFragment StoreEntitySet="Disk">
+                <ScalarProperty Name="ID_Disk" ColumnName="ID_Disk" />
+                <ScalarProperty Name="Title_Disk" ColumnName="Title_Disk" />
+                <ScalarProperty Name="Description_Disk" ColumnName="Description_Disk" />
+                <ScalarProperty Name="Price_Disk" ColumnName="Price_Disk" />
+                <ScalarProperty Name="ID_Type_Disk" ColumnName="ID_Type_Disk" />
+                <ScalarProperty Name="ID_Compatibility" ColumnName="ID_Compatibility" />
+                <ScalarProperty Name="ID_Type_Goods" ColumnName="ID_Type_Goods" />
+                <ScalarProperty Name="ID_Firm" ColumnName="ID_Firm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Firm">
+            <EntityTypeMapping TypeName="LantaSystemModel.Firm">
+              <MappingFragment StoreEntitySet="Firm">
+                <ScalarProperty Name="ID_Firm" ColumnName="ID_Firm" />
+                <ScalarProperty Name="Title_Firm" ColumnName="Title_Firm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Motherboard">
+            <EntityTypeMapping TypeName="LantaSystemModel.Motherboard">
+              <MappingFragment StoreEntitySet="Motherboard">
+                <ScalarProperty Name="ID_Motherboard" ColumnName="ID_Motherboard" />
+                <ScalarProperty Name="Title_Motherboard" ColumnName="Title_Motherboard" />
+                <ScalarProperty Name="Description_Motherboard" ColumnName="Description_Motherboard" />
+                <ScalarProperty Name="Price_Motherboard" ColumnName="Price_Motherboard" />
+                <ScalarProperty Name="ID_Compatibility" ColumnName="ID_Compatibility" />
+                <ScalarProperty Name="ID_Type_Goods" ColumnName="ID_Type_Goods" />
+                <ScalarProperty Name="ID_Firm" ColumnName="ID_Firm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Position">
+            <EntityTypeMapping TypeName="LantaSystemModel.Position">
+              <MappingFragment StoreEntitySet="Position">
+                <ScalarProperty Name="ID_Position" ColumnName="ID_Position" />
+                <ScalarProperty Name="Title_Position" ColumnName="Title_Position" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Power_unit">
+            <EntityTypeMapping TypeName="LantaSystemModel.Power_unit">
+              <MappingFragment StoreEntitySet="Power_unit">
+                <ScalarProperty Name="ID_Power_unit" ColumnName="ID_Power_unit" />
+                <ScalarProperty Name="Title_Power_unit" ColumnName="Title_Power_unit" />
+                <ScalarProperty Name="Description_Power_unit" ColumnName="Description_Power_unit" />
+                <ScalarProperty Name="Price_Power_unit" ColumnName="Price_Power_unit" />
+                <ScalarProperty Name="ID_Compatibility" ColumnName="ID_Compatibility" />
+                <ScalarProperty Name="ID_Type_Goods" ColumnName="ID_Type_Goods" />
+                <ScalarProperty Name="ID_Firm" ColumnName="ID_Firm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Processor">
+            <EntityTypeMapping TypeName="LantaSystemModel.Processor">
+              <MappingFragment StoreEntitySet="Processor">
+                <ScalarProperty Name="ID_Processor" ColumnName="ID_Processor" />
+                <ScalarProperty Name="Title_Processor" ColumnName="Title_Processor" />
+                <ScalarProperty Name="Description_Processor" ColumnName="Description_Processor" />
+                <ScalarProperty Name="Price_Processor" ColumnName="Price_Processor" />
+                <ScalarProperty Name="ID_Compatibility" ColumnName="ID_Compatibility" />
+                <ScalarProperty Name="ID_Type_Goods" ColumnName="ID_Type_Goods" />
+                <ScalarProperty Name="ID_Firm" ColumnName="ID_Firm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="RAM">
+            <EntityTypeMapping TypeName="LantaSystemModel.RAM">
+              <MappingFragment StoreEntitySet="RAM">
+                <ScalarProperty Name="ID_RAM" ColumnName="ID_RAM" />
+                <ScalarProperty Name="Title_RAM" ColumnName="Title_RAM" />
+                <ScalarProperty Name="Description_RAM" ColumnName="Description_RAM" />
+                <ScalarProperty Name="Price_RAM" ColumnName="Price_RAM" />
+                <ScalarProperty Name="ID_Compatibility" ColumnName="ID_Compatibility" />
+                <ScalarProperty Name="ID_Type_Goods" ColumnName="ID_Type_Goods" />
+                <ScalarProperty Name="ID_Firm" ColumnName="ID_Firm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Role">
+            <EntityTypeMapping TypeName="LantaSystemModel.Role">
+              <MappingFragment StoreEntitySet="Role">
+                <ScalarProperty Name="ID_Role" ColumnName="ID_Role" />
+                <ScalarProperty Name="Title_Role" ColumnName="Title_Role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Type_Disk">
+            <EntityTypeMapping TypeName="LantaSystemModel.Type_Disk">
+              <MappingFragment StoreEntitySet="Type_Disk">
+                <ScalarProperty Name="ID_Type_Disk" ColumnName="ID_Type_Disk" />
+                <ScalarProperty Name="Title_Tipe_Disk" ColumnName="Title_Tipe_Disk" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Type_Goods">
+            <EntityTypeMapping TypeName="LantaSystemModel.Type_Goods">
+              <MappingFragment StoreEntitySet="Type_Goods">
+                <ScalarProperty Name="ID_Type_Goods" ColumnName="ID_Type_Goods" />
+                <ScalarProperty Name="Title_Type_Goods" ColumnName="Title_Type_Goods" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="User">
+            <EntityTypeMapping TypeName="LantaSystemModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+                <ScalarProperty Name="Surname_User" ColumnName="Surname_User" />
+                <ScalarProperty Name="Name_User" ColumnName="Name_User" />
+                <ScalarProperty Name="Login_User" ColumnName="Login_User" />
+                <ScalarProperty Name="Password_User" ColumnName="Password_User" />
+                <ScalarProperty Name="Phone_User" ColumnName="Phone_User" />
+                <ScalarProperty Name="Address_User" ColumnName="Address_User" />
+                <ScalarProperty Name="ID_Role" ColumnName="ID_Role" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Video_card">
+            <EntityTypeMapping TypeName="LantaSystemModel.Video_card">
+              <MappingFragment StoreEntitySet="Video_card">
+                <ScalarProperty Name="ID_Video_card" ColumnName="ID_Video_card" />
+                <ScalarProperty Name="Title_Video_card" ColumnName="Title_Video_card" />
+                <ScalarProperty Name="Description_Video_card" ColumnName="Description_Video_card" />
+                <ScalarProperty Name="Price_Video_card" ColumnName="Price_Video_card" />
+                <ScalarProperty Name="ID_Compatibility" ColumnName="ID_Compatibility" />
+                <ScalarProperty Name="ID_Type_Goods" ColumnName="ID_Type_Goods" />
+                <ScalarProperty Name="ID_Firm" ColumnName="ID_Firm" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Buying_Goods">
+            <EntityTypeMapping TypeName="LantaSystemModel.Buying_Goods">
+              <MappingFragment StoreEntitySet="Buying_Goods">
+                <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+                <ScalarProperty Name="ID_Type_Goods" ColumnName="ID_Type_Goods" />
+                <ScalarProperty Name="ID_Goods" ColumnName="ID_Goods" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Payment">
+            <EntityTypeMapping TypeName="LantaSystemModel.Payment">
+              <MappingFragment StoreEntitySet="Payment">
+                <ScalarProperty Name="ID_Payment" ColumnName="ID_Payment" />
+                <ScalarProperty Name="Card_number" ColumnName="Card_number" />
+                <ScalarProperty Name="Card_code" ColumnName="Card_code" />
+                <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Employees" TypeName="LantaSystemModel.Employees" StoreEntitySet="Employees">
+            <EndProperty Name="Position">
+              <ScalarProperty Name="ID_Position" ColumnName="ID_Position" />
+            </EndProperty>
+            <EndProperty Name="User">
+              <ScalarProperty Name="ID_User" ColumnName="ID_User" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,104 @@
+﻿<Window x:Class="LantaSystem.WindowAvtor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LantaSystem"
+        mc:Ignorable="d"
+       Title="LANTASERVICE" WindowState="Maximized" WindowStyle="ThreeDBorderWindow">
+    <Window.Resources>
+        <Style TargetType="TextBlock" x:Key="zagolovok">
+            <Setter Property="FontSize" Value="50"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="Rockwell Extra Bold"/>
+            <Setter Property="FontFamily" Value="font/ofont.ru_Zing Rust.ttf #Bradley Hand ITC "/>
+
+        </Style>
+        <Style TargetType="TextBlock" x:Key="reklama">
+            <Setter Property="FontSize" Value="30" />
+            <Setter Property="FontFamily" Value="Rockwell Extra Bold"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+
+
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DockPanel LastChildFill="True">
+            <TextBlock Text="LANTASERVICE-Store" Style="{StaticResource zagolovok}"/>
+            <Image Source="img/lanta-logo.png" Width="70" HorizontalAlignment="Left"></Image>
+        </DockPanel>
+        <DockPanel Grid.Row="1" Background="#17a2b8">
+            <DockPanel HorizontalAlignment="Center">
+                <TextBlock Text=" Пройдите этап авторизации " VerticalAlignment="Center" Margin="0,0,33,0" FontSize="30" FontFamily="Rockwell Extra Bold"></TextBlock>
+            </DockPanel>
+        </DockPanel>
+        <ScrollViewer Grid.Row="2" Margin="0,20,0,0">
+            <StackPanel>
+                <DockPanel HorizontalAlignment="Center" Width="700">
+                    <TextBlock Text="Логин" VerticalAlignment="Center" Margin="0,0,33,0" FontSize="30" FontFamily="Rockwell Extra Bold"></TextBlock>
+                    <TextBox x:Name="txtLogin" MinWidth="500" BorderBrush="#17a2b8" BorderThickness="0,0,0,2"/>
+                </DockPanel>
+                <DockPanel HorizontalAlignment="Center" Width="700" Margin="0,15,0,0">
+                    <TextBlock Text="Пароль" VerticalAlignment="Center" Margin="0,0,20,0" FontSize="30" FontFamily="Rockwell Extra Bold"></TextBlock>
+                    <PasswordBox x:Name="txtPass" MinWidth="500" BorderBrush="#17a2b8" BorderThickness="0,0,0,2"/>
+                </DockPanel>
+
+                <Border BorderBrush="#17a2b8" Background="#17a2b8" BorderThickness="1" CornerRadius="10,10,10,10" Width="450" Height="50" Margin="0, 15, 0,30">
+                    <Button BorderBrush="#17a2b8" Background="#17a2b8" Content ="Войти" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Rockwell Extra Bold" FontSize="25" Padding="0,5,0,5"></Button>
+                </Border>
+                <TextBlock Text="Еще нет аккаунта?" HorizontalAlignment="Center" FontFamily="Rockwell Extra Bold" FontSize="20"></TextBlock>
+
+                <Border BorderBrush="#17a2b8" Background="#17a2b8" BorderThickness="1" CornerRadius="10,10,10,10" Width="450" Height="50" Margin="0, 5, 0,0">
+                    <Button  BorderBrush="#17a2b8" Background="#17a2b8" Content ="Зарегестрироваться" FontFamily="Rockwell Extra Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Padding="0,5,0,5"></Button>
+                </Border>
+                <StackPanel Height="3" Background="#17a2b8" Margin="0,65,0,5"></StackPanel>
+                <DockPanel Grid.Row="1" Background="#17a2b8">
+                    <DockPanel HorizontalAlignment="Center">
+                        <TextBlock Text=" У нас вы можете приобрести " VerticalAlignment="Center" Margin="0,15,30,15" FontSize="30" FontFamily="Rockwell Extra Bold"></TextBlock>
+                    </DockPanel>
+                </DockPanel>
+                <StackPanel Orientation="Horizontal" Height="400" HorizontalAlignment="Center" >
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" >
+                        <TextBlock TextWrapping="Wrap" Width="178" Text="Процессоры" Margin="0,20,0,40" FontFamily="Rockwell Extra Bold" FontSize="30"></TextBlock>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Width="300" Margin="30,0,0,0">
+                            <Image Source="img/proc.JPG" Width="300" Height="300" Margin="0"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" >
+                        <TextBlock TextWrapping="Wrap" Width="173" Text="Видеокарты" Margin="0,20,0,0" FontFamily="Rockwell Extra Bold" FontSize="30"></TextBlock>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Width="300" Margin="10">
+                            <StackPanel Width="3" Height="300" Background="#17a2b8" Margin="0,20,0,0"></StackPanel>
+                            <Image Source="img/videocarta.JPG" Width="300" Margin="5" Height="300"></Image>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" >
+                        <TextBlock TextWrapping="Wrap" Width="163" Text="HDD/SSD накопители" Margin="0,0,0,10" FontFamily="Rockwell Extra Bold" FontSize="30"></TextBlock>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Width="300" Margin="0">
+                            <StackPanel Width="3" Height="300" Background="#17a2b8" Margin="0,0,0,7"></StackPanel>
+                            <Image Source="img/ssd.JPG" Width="300" Margin="5"></Image>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" >
+                        <TextBlock TextWrapping="Wrap" Width="221" Text="Другие компоненты ПК" Margin="0,0,0,10" FontFamily="Rockwell Extra Bold" FontSize="30"></TextBlock>
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Width="300" Margin="30,0,0,0">
+                            <StackPanel Width="3" Height="300" Background="#17a2b8"></StackPanel>
+                            <Image Source="img/complect.JPG" Width="300" Height="300" Margin="5"/>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Height="3" Background="#17a2b8" Margin="0,5,0,50"></StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>

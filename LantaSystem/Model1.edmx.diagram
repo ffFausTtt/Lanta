@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5e9f7f59419848c9a064e2c3fd488e61" Name="Diagram1">
+        <EntityTypeShape EntityType="LantaSystemModel.Compatibility" Width="1.5" PointX="3.75" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LantaSystemModel.Corpus" Width="1.5" PointX="3" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LantaSystemModel.Disk" Width="1.5" PointX="6" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="LantaSystemModel.Firm" Width="1.5" PointX="3.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="LantaSystemModel.Motherboard" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LantaSystemModel.Position" Width="1.5" PointX="6.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="LantaSystemModel.Power_unit" Width="1.5" PointX="3" PointY="18.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LantaSystemModel.Processor" Width="1.5" PointX="6" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LantaSystemModel.RAM" Width="1.5" PointX="6" PointY="19.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LantaSystemModel.Role" Width="1.5" PointX="6.75" PointY="6" IsExpanded="true" />
+        <EntityTypeShape EntityType="LantaSystemModel.Type_Disk" Width="1.5" PointX="3.75" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="LantaSystemModel.Type_Goods" Width="1.5" PointX="0.75" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="LantaSystemModel.User" Width="1.5" PointX="9" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="LantaSystemModel.Video_card" Width="1.5" PointX="9" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="LantaSystemModel.Buying_Goods" Width="1.5" PointX="11.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="LantaSystemModel.Payment" Width="1.5" PointX="11.25" PointY="4.625" IsExpanded="true" />
+        <AssociationConnector Association="LantaSystemModel.FK_Corpus_Compatibility" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_Disk_Compatibility" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_Motherboard_Compatibility" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_Power_unit_Compatibility" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_Processor_Compatibility" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_RAM_Compatibility" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_Video_card_Compatibility" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_Buying_Goods_Corpus" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_Corpus_Firm" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_Corpus_Type_Goods" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_Buying_Goods_Disk" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_Disk_Firm" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_Disk_Type_Disk" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_Disk_Type_Goods" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_Motherboard_Firm" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_Power_unit_Firm" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_Processor_Firm" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_RAM_Firm" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_Video_card_Firm" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_Buying_Goods_Motherboard" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_Motherboard_Type_Goods" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_Buying_Goods_Power_unit" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_Power_unit_Type_Goods" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_Buying_Goods_Processor" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_Processor_Type_Goods" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_Buying_Goods_RAM" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_RAM_Type_Goods" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_User_Role" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_Buying_Goods_Type_Goods" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_Video_card_Type_Goods" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_Buying_Goods_User" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_Payment_User" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.FK_Buying_Goods_Video_card" ManuallyRouted="false" />
+        <AssociationConnector Association="LantaSystemModel.Employees" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
