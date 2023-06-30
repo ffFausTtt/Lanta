@@ -19,8 +19,11 @@ namespace LantaSystem
     /// </summary>
     public partial class WindowShop : Window
     {
-        public WindowShop()
+       User user = new User();
+        public WindowShop(User user)
         {
+            this.user = user;
+            InitializeComponent();
             InitializeComponent();
         }
     }

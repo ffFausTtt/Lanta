@@ -53,12 +53,12 @@
                 </DockPanel>
 
                 <Border BorderBrush="#17a2b8" Background="#17a2b8" BorderThickness="1" CornerRadius="10,10,10,10" Width="450" Height="50" Margin="0, 15, 0,30">
-                    <Button BorderBrush="#17a2b8" Background="#17a2b8" Content ="Войти" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Rockwell Extra Bold" FontSize="25" Padding="0,5,0,5"></Button>
+                    <Button Click ="Button_Click"   BorderBrush="#17a2b8" Background="#17a2b8" Content ="Войти" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Rockwell Extra Bold" FontSize="25" Padding="0,5,0,5"></Button>
                 </Border>
                 <TextBlock Text="Еще нет аккаунта?" HorizontalAlignment="Center" FontFamily="Rockwell Extra Bold" FontSize="20"></TextBlock>
 
                 <Border BorderBrush="#17a2b8" Background="#17a2b8" BorderThickness="1" CornerRadius="10,10,10,10" Width="450" Height="50" Margin="0, 5, 0,0">
-                    <Button  BorderBrush="#17a2b8" Background="#17a2b8" Content ="Зарегестрироваться" FontFamily="Rockwell Extra Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Padding="0,5,0,5"></Button>
+                    <Button Click="Button_Click_1" BorderBrush="#17a2b8" Background="#17a2b8" Content ="Зарегестрироваться" FontFamily="Rockwell Extra Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Padding="0,5,0,5"></Button>
                 </Border>
                 <StackPanel Height="3" Background="#17a2b8" Margin="0,65,0,5"></StackPanel>
                 <DockPanel Grid.Row="1" Background="#17a2b8">

@@ -28,6 +28,24 @@ namespace LantaSystem
             InitializeComponent();
         }
 
-        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            User user = DataBase.BaseModel.User.FirstOrDefault(x => x.Login_User == txtLogin.Text && x.Password_User == txtPass.Password);
+            if (user != null)
+            {
+                new WindowShop(user).Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Такого аккаунта не существует. Попробуйте снова или зарегистрируйтесь.");
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            new WindowReg().Show();
+            this.Close();
+        }
     }
 }
