@@ -46,7 +46,7 @@
                     <ComboBoxItem>По убыванию цены</ComboBoxItem>
                 </ComboBox>
                 <ComboBox  Margin="0,0,10,0" Height="50" Width="170" FontFamily="Rockwell" FontSize="25"></ComboBox>
-                <Button  Content="Корзина" Margin="0,0,10,0" Height="50" Width="170" FontFamily="Rockwell Extra Bold" FontSize="25"></Button>
+                <Button Content="Корзина" Margin="0,0,10,0" Height="50" Width="170" FontFamily="Rockwell Extra Bold" FontSize="25"></Button>
             </DockPanel>
         </DockPanel>
         <ListView  Grid.Row="2" ></ListView>
