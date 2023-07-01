@@ -37,7 +37,7 @@
         </DockPanel>
         <DockPanel Grid.Row="1" Background="#17a2b8">
             <DockPanel HorizontalAlignment="Center">
-                <Button Content="Профиль"  Margin="0,0,10,0" Height="50" Width="170" FontFamily="Rockwell Extra Bold" FontSize="25"></Button>
+                <Button Click="Button_Click" Content="Профиль"  Margin="0,0,10,0" Height="50" Width="170" FontFamily="Rockwell Extra Bold" FontSize="25"></Button>
                 <TextBox  Height="50" Width="170" Margin="0,0,10,0" x:Name="Scan" FontFamily="Rockwell" FontSize="25"></TextBox>
                 <ComboBox x:Name="Sort"  Margin="0,0,10,0" Height="50" Width="170" FontFamily="Rockwell" FontSize="25">
                     <ComboBoxItem>От А до Я</ComboBoxItem>

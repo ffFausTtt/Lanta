@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Xml.Linq;
 
 namespace LantaSystem
 {
@@ -25,6 +26,12 @@ namespace LantaSystem
             this.user = user;
             InitializeComponent();
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            new WindowProfil(user).Show();
+            this.Close();
         }
     }
 }
