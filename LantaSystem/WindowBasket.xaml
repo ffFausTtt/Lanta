@@ -56,7 +56,7 @@
             <DockPanel HorizontalAlignment="Center">
                 <Button Click="Button_Click" Content="Профиль" Margin="0,0,10,0" Height="50" Width="170" FontFamily="Rockwell Extra Bold" FontSize="25"></Button>
                 <Button Click="Button_Click_1" Content="Магазин" Margin="0,0,10,0" Height="50" Width="170" FontFamily="Rockwell Extra Bold" FontSize="25"></Button>
-                <Button Click="Button_Click_2" Content="Оформить заказ" Margin="0,0,10,0" Height="50" Width="230" FontFamily="Rockwell Extra Bold" FontSize="25"></Button>
+                <Button Content="Оформить заказ" Margin="0,0,10,0" Height="50" Width="230" FontFamily="Rockwell Extra Bold" FontSize="25"></Button>
             </DockPanel>
         </DockPanel>
         <DockPanel LastChildFill="True">

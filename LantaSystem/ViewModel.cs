@@ -189,9 +189,6 @@ namespace LantaSystem
             get { return firm; }
             set
             {
-
-                //BUFF.id – Just another WordPress site
-                //buff.ID
                 firm = value;
             }
         }
@@ -377,9 +374,6 @@ namespace LantaSystem
                     buff.Phone_User = user.Phone_User;
                     buff.Address_User = user.Address_User;
                     buff.ID_Role = user.ID_Role;
-
-
-
                     users.Add(buff);
                 }
                 return users;

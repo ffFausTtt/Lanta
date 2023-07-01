@@ -19,9 +19,25 @@ namespace LantaSystem
     /// </summary>
     public partial class WindowBasket : Window
     {
-        public WindowBasket()
+        List<Buying_Goods> goods = new List<Buying_Goods>();
+        User user = new User();
+        public WindowBasket(List<Buying_Goods> goods, User user)
         {
+            this.user = user;
+            //LBAllGoods.ItemsSource = goods;
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            new WindowProfil(user).Show();
+            this.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            new WindowShop(user).Show();
+            this.Close();
         }
     }
 }

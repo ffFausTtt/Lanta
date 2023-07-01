@@ -20,7 +20,8 @@ namespace LantaSystem
     /// </summary>
     public partial class WindowShop : Window
     {
-       User user = new User();
+        User user = new User();
+        List<Buying_Goods> goods = new List<Buying_Goods>();
         public WindowShop(User user)
         {
             this.user = user;
@@ -31,6 +32,12 @@ namespace LantaSystem
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             new WindowProfil(user).Show();
+            this.Close();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            new WindowBasket(goods, user).Show();
             this.Close();
         }
     }
