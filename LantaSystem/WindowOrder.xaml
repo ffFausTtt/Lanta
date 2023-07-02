@@ -1,0 +1,71 @@
+﻿<Window x:Class="LantaSystem.WindowOrder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LantaSystem"
+        mc:Ignorable="d"
+        Title="LANTASERVICE" WindowState="Maximized">
+    <Window.Resources>
+        <Style TargetType="TextBlock" x:Key="zagolovok">
+            <Setter Property="FontSize" Value="50"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontFamily" Value="Rockwell Extra Bold"/>
+            <Setter Property="FontFamily" Value="font/ofont.ru_Zing Rust.ttf #Bradley Hand ITC "/>
+
+        </Style>
+        <Style TargetType="TextBlock" x:Key="reklama">
+            <Setter Property="FontSize" Value="30" />
+            <Setter Property="FontFamily" Value="Rockwell Extra Bold"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="70"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+
+
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DockPanel LastChildFill="True">
+            <TextBlock Text="LANTASERVICE-Store" Style="{StaticResource zagolovok}"/>
+        </DockPanel>
+        <DockPanel Grid.Row="1" Background="#17a2b8">
+            <DockPanel HorizontalAlignment="Center">
+                <Button Content="Профиль" Click="Button_Click" Margin="0,0,10,0" Height="50" Width="170" FontFamily="Rockwell Extra Bold" FontSize="25"></Button>
+                <Button Click="Button_Click_1" Content="Магазин" Margin="0,0,10,0" Height="50" Width="170" FontFamily="Rockwell Extra Bold" FontSize="25"></Button>
+            </DockPanel>
+        </DockPanel>
+        <ScrollViewer Grid.Row="2" Margin="0,20,0,0">
+            <StackPanel Height="368">
+                <DockPanel HorizontalAlignment="Center" Width="700" Margin="0,15,0,0">
+                    <TextBlock Text="Номер карты" VerticalAlignment="Center" Margin="0,0,33,0" FontSize="30" FontFamily="Rockwell Extra Bold"></TextBlock>
+                    <TextBox x:Name="txtKarta" MinWidth="500" BorderBrush="#17a2b8" BorderThickness="0,0,0,2"/>
+                </DockPanel>
+                <DockPanel HorizontalAlignment="Center" Width="700" Margin="0,15,0,0">
+                    <TextBlock Text="CVV" VerticalAlignment="Center" Margin="0,0,33,0" FontSize="30" FontFamily="Rockwell Extra Bold"></TextBlock>
+                    <TextBox x:Name="txtCvv" MinWidth="500" BorderBrush="#17a2b8" BorderThickness="0,0,0,2"/>
+                </DockPanel>
+                <DockPanel HorizontalAlignment="Center" Width="700" Margin="0,15,0,0">
+                    <TextBlock Text="Сумма заказа" VerticalAlignment="Center" Margin="0,0,33,0" FontSize="30" FontFamily="Rockwell Extra Bold"></TextBlock>
+                    <TextBlock FontSize="30" FontFamily="Rockwell Extra Bold" x:Name="txtSumOrder" Text="{Binding Price_Goods}"></TextBlock>
+                </DockPanel>
+                <DockPanel HorizontalAlignment="Center" Width="700" Margin="0,15,0,0">
+                    <TextBlock Text="Подтверждение оплаты" VerticalAlignment="Center" Margin="0,0,33,0" FontSize="30" FontFamily="Rockwell Extra Bold"></TextBlock>
+                    <CheckBox x:Name="txtCheck" MinWidth="500" BorderBrush="#17a2b8" BorderThickness="0,0,0,2"/>
+                </DockPanel>
+                <Border BorderBrush="#17a2b8" Background="#17a2b8" BorderThickness="1" CornerRadius="10,10,10,10" Width="450" Height="50" Margin="0, 15, 0,0">
+                    <Button Click="Button_Click_2" BorderBrush="#17a2b8" Background="#17a2b8" Content ="Оплатить" FontFamily="Rockwell Extra Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Padding="0,5,0,5"></Button>
+                </Border>
+            </StackPanel>
+
+
+        </ScrollViewer>
+
+    </Grid>
+</Window>

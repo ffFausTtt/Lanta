@@ -27,6 +27,7 @@ namespace LantaSystem
         public int ID_Compatibility { get; set; }
         public int ID_Type_Goods { get; set; }
         public int ID_Firm { get; set; }
+        public string IMG_RAM { get; set; }
     
         public virtual Compatibility Compatibility { get; set; }
         public virtual Firm Firm { get; set; }

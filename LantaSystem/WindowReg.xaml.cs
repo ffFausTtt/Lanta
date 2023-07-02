@@ -70,7 +70,7 @@ namespace LantaSystem
                     {
                         DataBase.BaseModel.User.Add(user);
                         DataBase.BaseModel.SaveChanges();
-                        DataBase.BaseModel = new LantaSystemEntities();
+                        DataBase.BaseModel = new LantaSystemEntitiesBD();
                         new WindowShop(user).Show();
                         this.Close();
                     }

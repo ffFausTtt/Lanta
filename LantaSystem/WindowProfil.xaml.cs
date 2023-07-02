@@ -61,7 +61,7 @@ namespace LantaSystem
                 Address_User = txtAdres.Text,
                 ID_Role = 2,
             };
-            DataBase.BaseModel = new LantaSystemEntities();
+            DataBase.BaseModel = new LantaSystemEntitiesBD();
             new WindowShop(user).Show();
             this.Close();
         }

@@ -23,10 +23,11 @@ namespace LantaSystem
         public int ID_Power_unit { get; set; }
         public string Title_Power_unit { get; set; }
         public string Description_Power_unit { get; set; }
-        public int Price_Power_unit { get; set; }
+        public Nullable<int> Price_Power_unit { get; set; }
         public int ID_Compatibility { get; set; }
         public int ID_Type_Goods { get; set; }
         public int ID_Firm { get; set; }
+        public string IMG_Power_unit { get; set; }
     
         public virtual Compatibility Compatibility { get; set; }
         public virtual Firm Firm { get; set; }

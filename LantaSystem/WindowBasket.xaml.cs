@@ -19,6 +19,7 @@ namespace LantaSystem
     /// </summary>
     public partial class WindowBasket : Window
     {
+        List<Processor> proc = new List<Processor>();
         List<Buying_Goods> goods = new List<Buying_Goods>();
         User user = new User();
         public WindowBasket(List<Buying_Goods> goods, User user)
@@ -37,6 +38,12 @@ namespace LantaSystem
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             new WindowShop(user).Show();
+            this.Close();
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            new WindowOrder(proc, user).Show();
             this.Close();
         }
     }

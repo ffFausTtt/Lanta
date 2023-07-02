@@ -28,6 +28,7 @@ namespace LantaSystem
         public int ID_Compatibility { get; set; }
         public int ID_Type_Goods { get; set; }
         public int ID_Firm { get; set; }
+        public string IMG_Disk { get; set; }
     
         public virtual Compatibility Compatibility { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

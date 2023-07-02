@@ -13,10 +13,10 @@ namespace LantaSystem
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class LantaSystemEntities : DbContext
+    public partial class LantaSystemEntitiesBD : DbContext
     {
-        public LantaSystemEntities()
-            : base("name=LantaSystemEntities")
+        public LantaSystemEntitiesBD()
+            : base("name=LantaSystemEntitiesBD")
         {
         }
     
@@ -30,6 +30,7 @@ namespace LantaSystem
         public virtual DbSet<Disk> Disk { get; set; }
         public virtual DbSet<Firm> Firm { get; set; }
         public virtual DbSet<Motherboard> Motherboard { get; set; }
+        public virtual DbSet<Payment> Payment { get; set; }
         public virtual DbSet<Position> Position { get; set; }
         public virtual DbSet<Power_unit> Power_unit { get; set; }
         public virtual DbSet<Processor> Processor { get; set; }
@@ -40,6 +41,5 @@ namespace LantaSystem
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<Video_card> Video_card { get; set; }
         public virtual DbSet<Buying_Goods> Buying_Goods { get; set; }
-        public virtual DbSet<Payment> Payment { get; set; }
     }
 }
