@@ -12,7 +12,7 @@ namespace UnitTestProject
         [TestMethod]
         public void NotAvtoriseLogin()
         {
-            var user = DataBase.BaseModel.User.FirstOrDefault(x => x.Login_User == "" && x.Password_User == "pas1"); 
+            var user = DataBase.BaseModel.User.FirstOrDefault(x => x.Login_User == "" && x.Password_User == "pas1");
             Assert.IsNull(user);
         }
 
@@ -34,7 +34,7 @@ namespace UnitTestProject
         public void NotAvtorise()
         {
             var user = DataBase.BaseModel.User.FirstOrDefault(x => x.Login_User == "" && x.Password_User == "");
-            Assert.IsNotNull(user);
+            Assert.IsNull(user);
         }
 
         [TestMethod]
@@ -50,6 +50,25 @@ namespace UnitTestProject
                 Address_User = "Нижний Новгород"
             });
             Assert.IsNotNull(user);
+        }
+
+        [TestMethod]
+        public void NotCreateAccount()
+        {
+            Assert.ThrowsException<AssertFailedException>(() => Assert.ThrowsException<SystemException>(() =>
+
+                DataBase.BaseModel.User.Add(new User
+                {
+                   Surname_User = "",
+                   Name_User = "",
+                   Login_User = "",
+                   Password_User = "",
+                   Phone_User = "",
+                   Address_User = "",
+                   ID_User = 1,
+                   ID_Role = 5
+                })
+            ));
         }
     }
 }

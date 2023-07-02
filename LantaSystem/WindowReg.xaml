@@ -45,34 +45,34 @@
             <StackPanel>
                 <DockPanel HorizontalAlignment="Center" Width="700">
                     <TextBlock Text="Фамилия" VerticalAlignment="Center" Margin="0,0,33,0" FontSize="30" FontFamily="Rockwell Extra Bold"></TextBlock>
-                    <TextBox x:Name="txtSuName" MinWidth="500" BorderBrush="#FF6C73E6" BorderThickness="0,0,0,2"/>
+                    <TextBox x:Name="txtSuName" MinWidth="500" BorderBrush="#17a2b8" BorderThickness="0,0,0,2"/>
                 </DockPanel>
                 <DockPanel HorizontalAlignment="Center" Width="700" Margin="0,15,0,0">
                     <TextBlock Text="Имя" VerticalAlignment="Center" Margin="0,0,20,0" FontSize="30" FontFamily="Rockwell Extra Bold"></TextBlock>
-                    <TextBox x:Name="txtName" MinWidth="500" BorderBrush="#FF6C73E6" BorderThickness="0,0,0,2"/>
+                    <TextBox x:Name="txtName" MinWidth="500" BorderBrush="#17a2b8" BorderThickness="0,0,0,2"/>
                 </DockPanel>
                 <DockPanel HorizontalAlignment="Center" Width="700" Margin="0,15,0,0">
                     <TextBlock Text="Логин" VerticalAlignment="Center" Margin="0,0,33,0" FontSize="30" FontFamily="Rockwell Extra Bold"></TextBlock>
-                    <TextBox x:Name="txtLogin" MinWidth="500" BorderBrush="#FF6C73E6" BorderThickness="0,0,0,2"/>
+                    <TextBox x:Name="txtLogin" MinWidth="500" BorderBrush="#17a2b8" BorderThickness="0,0,0,2"/>
                 </DockPanel>
                 <DockPanel HorizontalAlignment="Center" Width="700" Margin="0,15,0,0">
                     <TextBlock Text="Пароль" VerticalAlignment="Center" Margin="0,0,33,0" FontSize="30" FontFamily="Rockwell Extra Bold"></TextBlock>
-                    <PasswordBox x:Name="txtPass" MinWidth="500" BorderBrush="#FF6C73E6" BorderThickness="0,0,0,2"/>
+                    <PasswordBox x:Name="txtPass" MinWidth="500" BorderBrush="#17a2b8" BorderThickness="0,0,0,2"/>
                 </DockPanel>
                 <DockPanel HorizontalAlignment="Center" Width="700" Margin="0,15,0,0">
                     <TextBlock Text="Телефон" VerticalAlignment="Center" Margin="0,0,33,0" FontSize="30" FontFamily="Rockwell Extra Bold"></TextBlock>
-                    <TextBox x:Name="txtPhon" MinWidth="500" BorderBrush="#FF6C73E6" BorderThickness="0,0,0,2"/>
+                    <TextBox x:Name="txtPhon" MinWidth="500" BorderBrush="#17a2b8" BorderThickness="0,0,0,2"/>
                 </DockPanel>
                 <DockPanel HorizontalAlignment="Center" Width="700" Margin="0,15,0,0">
                     <TextBlock Text="Адрес" VerticalAlignment="Center" Margin="0,0,33,0" FontSize="30" FontFamily="Rockwell Extra Bold"></TextBlock>
-                    <TextBox x:Name="txtAdres" MinWidth="500" BorderBrush="#FF6C73E6" BorderThickness="0,0,0,2"/>
+                    <TextBox x:Name="txtAdres" MinWidth="500" BorderBrush="#17a2b8" BorderThickness="0,0,0,2"/>
                 </DockPanel>
 
                 <Border BorderBrush="#FF6C73E6" Background="#17a2b8" BorderThickness="1" CornerRadius="10,10,10,10" Width="300" Height="50" Margin="0, 60, 0,0">
                     <Button Click="Button_Click" BorderBrush="#17a2b8" Background="#17a2b8" Content ="Зарегестрироваться" FontFamily="Rockwell Extra Bold" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="25" Padding="0,5,0,5"></Button>
                 </Border>
 
-                <StackPanel Height="3" Background="#FFA0A5F3" Margin="0,65,0,10"></StackPanel>
+                <StackPanel Height="3" Background="#17a2b8" Margin="0,65,0,10"></StackPanel>
                 <DockPanel Grid.Row="1" Background="#17a2b8">
                     <DockPanel HorizontalAlignment="Center">
                         <TextBlock Text=" После регистрации, вы сможете преобрести товары от наших партнёров " VerticalAlignment="Center" Margin="0,15,33,15" FontSize="30" FontFamily="Rockwell Extra Bold"></TextBlock>
@@ -83,7 +83,7 @@
                     <Image Source="img/Lenovo.png"/>
                     <Image Source="img/Acer.png" Width="504"></Image>
             </StackPanel>
-            <StackPanel Height="3" Background="#FFA0A5F3" Margin="0,5,0,50"></StackPanel>
+                <StackPanel Height="3" Background="#17a2b8" Margin="0,5,0,50"></StackPanel>
             </StackPanel>
         </ScrollViewer>
     </Grid>
