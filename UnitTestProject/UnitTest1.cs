@@ -59,14 +59,14 @@ namespace UnitTestProject
 
                 DataBase.BaseModel.User.Add(new User
                 {
-                   Surname_User = "",
-                   Name_User = "",
-                   Login_User = "",
-                   Password_User = "",
-                   Phone_User = "",
-                   Address_User = "",
-                   ID_User = 1,
-                   ID_Role = 5
+                    Surname_User = "",
+                    Name_User = "",
+                    Login_User = "",
+                    Password_User = "",
+                    Phone_User = "",
+                    Address_User = "",
+                    ID_User = 1,
+                    ID_Role = 5
                 })
             ));
         }

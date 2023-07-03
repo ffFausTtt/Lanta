@@ -33,7 +33,7 @@ namespace LantaSystem
             InitializeComponent();
         }
 
-        
+
         public Payment buffer;
         public WindowOrder()
         {
@@ -69,7 +69,7 @@ namespace LantaSystem
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message); 
+                MessageBox.Show(ex.Message);
             }
         }
     }
